@@ -1,0 +1,64 @@
+﻿body {
+
+	
+}
+
+@media(max-width : 400px) {
+	#media1 {
+		width: 300px;
+		height: 800px;
+	}
+}
+
+
+@media(min-width : 701px) {
+	#media2 {
+		width: 600px;
+		height: 400px;
+	}
+}
+
+#up_button {
+	position: relative;
+	left: 30px;
+}
+
+#under_button {
+	position: relative;
+	left: 70px;
+}
+
+#up_list {
+	position: fixed;
+	left: 10px;
+	top: 0px;	
+}
+
+
+#up_list span {
+	display:inline-block;
+	color: white;
+	width: 40px;
+	height: 40px;
+	background: #336666;
+	border: 1px solid #3333ff;
+	border-radius : 5px 5px 5px 5px;
+	margin-left:-3px;
+}
+
+#up_list span:hover{
+	background:#3333ff;
+}
+
+#d {
+	height: 10000px;
+	width: 2px;
+	background: #444;
+}
+
+h2{text-align:end;}
+
+
+img{width:200px; height:200px; position:relative; top:30px;}
+
+.button_wrap{position:relative; top:50px;}
