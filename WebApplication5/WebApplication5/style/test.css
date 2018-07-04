@@ -1,4 +1,6 @@
 ﻿body {
+    list-style: none;
+    text-decoration : none;
 }
 
 @media(max-width : 400px) {
@@ -16,48 +18,88 @@
 	}
 }
 
-#up_button {
-	position: relative;
-	left: 30px;
-	width : 100px;
-	height : 100px;
+
+#comment{
+    margin-left:-8px;
 }
+
+.button_wrap li{
+	list-style : none;
+    text-decoration : none;
+    float:left;
+}
+
+#up_button {
+	position : relative;
+    top:-30px;
+	
+	width : 60px;
+	height : 40px;
+    border : 1px solid #dddddd;
+    border-radius : 3px 3px 3px 3px;
+    background : #dddddd;
+    transition : background-color linear 200ms;
+    
+}
+
+
 
 #under_button {
-	position: relative;
-	left: 70px;
-	width: 100px;
-	height: 100px;
+    position: relative;
+    top:-30px;
+    left: 75px;
+    width: 60px;
+    height: 40px;
+    border: 1px solid #dddddd;
+    border-radius: 3px 3px 3px 3px;  
+    background: #dddddd;
+    transition: background-color linear 200ms;
 }
+
+
+#up_button:hover
+{
+    border : 1px dotted #000000;
+    background : #808080;
+}
+
+#under_button:hover {
+    border: 1px dotted #000000;
+    background: #808080;
+}
+
 
 #up_list {
-	position: fixed;
-	left: 10px;
-	top: 0px;
-	width : 400px;
+    position: fixed;
+    left:0px;   
+    top: 0px;
+   
+    height:50px;
+    background: #808080;
+   
 }
 
 
-	#up_list span {
+
+	#up_list span {        
 		display: inline-block;
 		color: white;
 		width: 40px;
 		height: 40px;
-		background: #336666;
-		border: 1px solid #3333ff;
+		border: 1px solid #dddddd;
 		border-radius: 5px 5px 5px 5px;
 		margin-right: 10px;
+        margin-top : 6px;
+		transition: background-color linear 300ms;
+        background :#dddddd;
 	}
 
 		#up_list span:hover {
-			background: #3333ff;
+			background: #808080;
 		}
 
-#d {
-	height: 10000px;
-	width: 2px;
-	background: #444;
-}
+
+
 
 h2 {
 	text-align: end;
@@ -67,8 +109,7 @@ h2 {
 img {
 	width: 300px;
 	height: 300px;
-	position: relative;
-	top: 30px;
+	
 }
 
 .button_wrap {
@@ -76,21 +117,169 @@ img {
 	top: 50px;
 }
 
-#browser_wid_hei{
-	background:#b6ff00;
-	width : 200px;
-	height : 200px;
-	font-size : 40px;
-	text-align : center;
-	position : absolute;
-	left : 10px;
-	top : 200px;
-	
+
+
+
+#comment_bnt{
+
+}
+
+#comment_add{
+	border-bottom : 1px dotted #808080;
+	transition : background-color linear 300ms;
+}
+
+#comment_add:hover{
+	background:#dddddd;
 }
 
 
-#comment_input{
-	position : absolute;
-	left : 300px;
-	top: 500px;
+
+
+#comment_list {
+	width: 200px;
+	height: 30px;
+	padding-top: 20px;
+	text-align: center;
+	align-content: center;
+}
+
+#comment_list_a{
+	text-decoration : none;
+    padding-left:5px;
+    text-align : center;
+	background:#dddddd;
+	color : black;
+    margin-left :4px;
+    transition:background-color linear 300ms;
+}
+#comment_list_a:hover 
+{
+    background:#808080;
+}
+    #up_list li {
+        
+    width : 30px;
+    height : 30px;
+    
+    float: left;
+    list-style: none;
+    text-decoration: none;
+    background: #dddddd;
+    border: 1px dotted #dddddd;
+    border-radius: 2px 2px 2px 2px;
+    transition: background-color linear 300ms;
+}
+
+#up_list li:hover
+{
+    background :#808080;
+}
+
+#up_data_like {
+    position: fixed;
+    left: 0px;
+    top: -105px;
+    width: 300px;
+    height: 100px;
+    background: #dddddd;
+    border: 1px dotted #dddddd;
+    border-radius: 4px 4px 4px 4px;
+    transition: background-color linear 300ms;
+}
+
+    #up_data_like li{
+        list-style : none;
+        z-index:8;
+    }
+
+#up_data_like:hover{
+    background:#808080;
+}
+
+#db_like:focus{
+    border : 2px solid #3333ff;
+}
+
+
+
+#input_val {
+    color: #808080;
+    margin-left: -8px;
+}
+#input_val:focus {
+    border: 2px solid #3333ff;
+}
+
+#auto_display ul {
+    display: none;
+    position: relative;
+    top:-14px;
+    left:-39px;
+}
+
+#auto_display ul li {
+      
+        background: #dddddd;
+        transition: background-color linear 300ms;
+        text-decoration:none;
+      
+}
+#auto_display ul li:hover 
+{
+    background:#808080;
+}
+#menu_list{
+    position :fixed;
+    
+    top:0px;
+    width:300px;
+    height:400px;
+    background  : #808080;
+}
+#menu_list li a,#menu_list li
+{
+  list-style:none;
+  text-decoration:none;
+}
+
+
+#menu_click {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    display: inline-block;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #dddddd;
+    border-radius: 5px 5px 5px 5px;
+    text-align:center;
+    margin-top: 4px;
+    transition: background-color linear 300ms;
+    background: #dddddd;
+}
+#menu_click:hover
+{
+    background:#808080;
+}
+
+
+#like {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    display: inline-block;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #dddddd;
+    border-radius: 5px 5px 5px 5px;
+    text-align: center;
+    margin-top: 4px;
+    transition: background-color linear 300ms;
+    background: #dddddd;
+}
+#like:hover {
+    background: #808080;
 }

@@ -5,7 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace WebApplication3.Models
+namespace WebApplication5.Models
 {
 	public class testpages
 	{
@@ -17,6 +17,17 @@ namespace WebApplication3.Models
 		public string recom_up { get; set; }
 
 		public string recom_down { get; set; }
+
+		public string times { get; set; }
+
+		public string views { get; set; }
+
+		public string login_id { get; set; }
+
+		public string login_pass { get; set; }
+
+		public string comment { get; set; }
+
 
 	}
 

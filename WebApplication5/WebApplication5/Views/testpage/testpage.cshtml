@@ -1,56 +1,154 @@
 ﻿@{
-	Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<link href="@Href("~/style/test.css")" rel="stylesheet" type="text/css" />
+@model IEnumerable<WebApplication5.Models.testpages>
+
+@{
+    Random r = new Random();
+    int ran = r.Next(1, 1000);
+    var timestamp =1341232 * ran;
+    
+
+}
+<link href="~/style/test.css?t=@timestamp" rel="stylesheet" type="text/css" />
 <html>
 
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
 
 </head>
 
 <body>
-	<h2>연습용 페이지</h2>
+    <script>
+        var url = location.href;
+        var reg = /\?/;
 
-	<div id="media1">
+        if (!reg.test(url)) {
+            location.replace = "?i=1"
+        }
+    </script>
+    <h2>연습용 페이지</h2>
 
-		<img src="http://cfile29.uf.tistory.com/image/23620E4057E37EED15F101" width="400" height="400">
+    <div id="media1">
 
-		<div class="button_wrap">
-			<span>
-				<input type="button" value="추천" id="up_button" style="WIDTH: 50px; HEIGHT: 50px;">
-			</span>
-			<span>
-				<input type="button" value="비추" id="under_button" style="WIDTH: 50px; HEIGHT: 50px">
-			</span>
-		</div>
+        <img src="http://cfile29.uf.tistory.com/image/23620E4057E37EED15F101">
 
-		<div id="up_list">
-			<span>친구 등록</span>
-			<span>회원 정보</span>
-			<span>게시글</span>
-			<span>친구 찾기</span>
-			<span>랄라랄랄</span>
-		</div>
+        <div class="button_wrap">
 
-		<div id="comment_input"><input type="text" width="100" /><input type="button" value="댓글버튼" /></div>
-		<div id="comment"></div>
+            <span id="up_button">@ViewBag.recom_up 추천</span>
 
-	</div>
+            <span id="under_button">@ViewBag.recom_down 비추천</span>
+
+        </div>
 
 
-	
+        <div id="up_list"></div>
+        <span id="menu_click">메뉴</span>
+        <span id="like">검색</span>
+
+        <br /><br /><br /><br />
+        <div id="comment" style="width:280px">
+
+            @if (ViewBag.dx != "11")
+            {
+
+                if (ViewBag.i == null)
+                {
+                    ViewBag.i = 1;
+                }
 
 
-	<div id="browser_wid_hei"></div>
+                String sp = ViewBag.comment_data;
+                String[] comment_split;
+                comment_split = sp.Split('§');
+
+
+                if (ViewBag.i == 1)
+                {
+                    for (int i = ViewBag.i; i < comment_split.Length; i++)
+                    {
+                        if (comment_split[i] != null)
+                        {
+                            <div id="comment_add">@comment_split[i]</div>
+
+                            if (i == 10)
+                            {
+                                break;
+                            }
+
+                        }
+                    }
+                }
+
+                if (ViewBag.i >= 2)
+                {
+                    for (int i = ViewBag.i * 10 - 10; i < comment_split.Length; i++)
+                    {
+                        if (comment_split[i] != null)
+                        {
+                            <div id="comment_add">@comment_split[i]</div>
+                        }
+                        if (((i + 1) % 10) == 0)
+                        {
+                            break;
+                        }
+                    }
+                }
+
+            }
+
+        </div>
+
+        @{
+            int list_count = ViewBag.comment_list_data / 10;
+            <div id="comment_list">
+
+                @if (ViewBag.comment_list_data == 0)
+                {
+
+                }
+                else
+                {
+                    for (int i = 1; i < list_count + 2; i++)
+                    {
+                        <a id="comment_list_a" href="?i=@i"> @i </a>
+                    }
+                }
+            </div>
+        }
+        <div id="comment_div"><input type="text" size="25" id="input_val" value="댓글을 입력해주세요" /><input type="button" value="등록" id="comment_bnt" /></div>
+
+    </div>
+
+
+    <div id="up_data_like" class="up_data_like">
+        <div style="margin-top : 30px;" class="up_data_div">
+            <input type="text" size="30" id="db_like" class="db_like" /><input type="button" value="검색" id="db_like_button" class="db_like_button" />
+        </div>
+        <div id="auto_display" class="auto_display">
+            <ul></ul>
+        </div>
+    </div>
 
 
 
-	
+    <div id="menu_list" class="menu_list">
+        <ul>
+            <li><a href="#">회원정보</a></li>
+            <li><a href="#">자유게시판</a></li>
+            <li><a href="#">영상게시판</a></li>
+            <li><a href="#">룰루랄라</a></li>
+        </ul>
+    </div>
 
+    <div id="browser_wid_hei"></div>
 
-	<script src="~/script/test.js" language="javascript" type="text/javascript"></script>
+    <div id="teiki"></div>
+    
+
+    <script src="~/script/test.js?t=@timestamp" language="javascript" type="text/javascript"></script>
 </body>
 </html>
