@@ -13,7 +13,7 @@ class PhoneForm extends Component {
 
   }
   
-  handleChange = (e)=>  {
+  handleChan = (e)=>  {
     this.setState({
       [e.target.name]: e.target.value
     })
@@ -35,13 +35,13 @@ class PhoneForm extends Component {
         <input
           placeholder="이름"
           value={this.state.name}
-          onChange={this.handleChange}
+          onChange={this.handleChan}
           name="name"
         />
         <input
           placeholder="전화번호"
           value={this.state.phone}
-          onChange={this.handleChange}
+          onChange={this.handleChan}
           name="phone"
         />
         <button type="submit">등록</button>

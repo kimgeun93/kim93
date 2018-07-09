@@ -7,6 +7,14 @@
             "type": "npm",
             "script": "build",
             "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "start",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }

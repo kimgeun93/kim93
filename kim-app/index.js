@@ -1,24 +1,51 @@
-var mysql = require('mysql');
+var express    =  require("express");  
+var mysql      = require('mysql');  
+var connection = mysql.createConnection({  
+  host     : 'localhost',  
+  user     : 'root',  
+  password : 'sa435440',  
+  database : 'sakila'  
+});  
 
+connection.connect(function(err){
 
+  if(err){
+    console.log(err);
+  }
+  else{
+    console.log('성공');
+  }
 
-var dbconnection = mysql.createConnection({
-
-    host:'localhost',
-    user:'root',
-    password:'sa435440',
-    port : 3306,
-    database:'sakila'
 });
 
-dbconnection.connect();
+/////////////////////////////////////
+var app = express();  
 
+app.use(express.static(__dirname));        // 앱 설정하는곳
 
-dbconnection.query('select * from testpage', function (err, rows, fields) {
-  if(!err)
-     console.log(rows);
-  else  
-     console.log(err);
+app.set('views', __dirname+'/views');           
+app.set('view engine', 'ejs');   
+
+app.get("/",function(request,response){  
+
+  var rows;
+
+connection.query('select * from testpage', function(err, row){
+  if(!err){  
+    console.log(row);
+    
+     rows = row;
+  }
+  else{
+    console.log(err);
+    
+  }
+
 });
+connection.end();
+response.render('home', {title : "kim-ggggg"});
+});  
 
-dbconnection.end();
+app.listen(3000);  
+
+
