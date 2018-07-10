@@ -2,12 +2,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+
 class Bta extends React.Component{
-
-
-  
-
-
 
 
 render(){

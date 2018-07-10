@@ -1,5 +1,19 @@
-var CommentBox = React.createClass({ render: function() { return ( <div className="commentBox"> Hello, world! I am a CommentBox. </div> ); } });
+
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 
-ReactDOM.render( <CommentBox />, document.getElementById('reac') );
+class Bta extends React.Component{
+
+
+    render(){
+      return(
+         <div>
+            리엑트 붙이기 성공
+         </div>
+      );
+    }
+}
+
+ReactDOM.render(<Bta/>, document.getElementById('app'));
 

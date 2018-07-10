@@ -7,16 +7,6 @@ var connection = mysql.createConnection({
   database : 'sakila'  
 });  
 
-connection.connect(function(err){
-
-  if(err){
-    console.log(err);
-  }
-  else{
-    console.log('성공');
-  }
-
-});
 
 /////////////////////////////////////
 var app = express();  
@@ -30,20 +20,7 @@ app.get("/",function(request,response){
 
   var rows;
 
-connection.query('select * from testpage', function(err, row){
-  if(!err){  
-    console.log(row);
-    
-     rows = row;
-  }
-  else{
-    console.log(err);
-    
-  }
-
-});
-connection.end();
-response.render('home', {title : "kim-ggggg"});
+response.render('home.ejs', {title : "kim-ggggg"});
 });  
 
 app.listen(3000);  
